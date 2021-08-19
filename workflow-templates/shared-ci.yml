@@ -1,4 +1,4 @@
-name: Beacon CI
+name: Shared CI
 
 on:
   push:

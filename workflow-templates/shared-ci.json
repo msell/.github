@@ -1,0 +1,6 @@
+{
+  "name": "Beacon Shared Workflow",
+  "description": "Shared CI for UI and API projets",
+  "iconName": "dumpster-fire-solid.svg",
+  "categories": ["React", "Clojure"]
+}
