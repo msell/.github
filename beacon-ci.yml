@@ -1,0 +1,37 @@
+name: Beacon CI
+
+on:
+  push:
+    pull_request:
+    push:
+      branches:
+        - development
+        - staging
+        - production
+jobs:
+  build-ui:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/msell/repo-a
+    - name: build ui
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm run build --if-present
+    - run: npm test
+    - run: npm start
+  build-api:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: https://github.com/msell/repo-b
+    - name: build ui
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm run build --if-present
+    - run: npm test
+    - run: npm start
